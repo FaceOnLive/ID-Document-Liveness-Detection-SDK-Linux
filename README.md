@@ -10,6 +10,7 @@ Make sure to check it out at https://getapi.faceonlive.com and take advantage of
 <a target="_blank" href="skype:demidemi1125?chat"><img src="https://img.shields.io/badge/skype-demidemi1125-blue.svg?logo=skype " alt="www.faceonlive.com"></a>
 </p>
 
+It can detect screen presentation, photo replacement, printed cutout and low quality documents.
 Please try on our portfolio website. (No sign-up required.)
 
 https://portfolio.faceonlive.com/#server_sdks/server/
