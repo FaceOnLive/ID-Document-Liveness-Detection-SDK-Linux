@@ -1,0 +1,33 @@
+{
+    "model_name": "ag_195.onnx",
+    "nnet_input_name": "x",
+    "nnet_output_name": "identity",
+    "preprocessors": [
+        {
+            "type": "resize",
+            "target_height": 288,
+            "target_width": 288,
+            "interpolation_mode": "INTER_LINEAR"
+        },
+        {
+            "type": "lead_to_orientation",
+            "target_orientation": "k0"
+        },
+        {
+            "type": "normalize",
+            "mean": [
+                123.675,
+                116.28,
+                103.53
+            ],
+            "std": [
+                58.395,
+                57.12,
+                57.375
+            ]
+        }
+    ],
+    "cache": {
+        "7.5": "ag_195.7-5"
+    }
+}

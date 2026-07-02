@@ -1,0 +1,27 @@
+{
+    "model_name": "rn_6.onnx",
+    "nnet_input_name": "input",
+    "nnet_output_name": "output",
+    "preprocessors": [
+        {
+            "type": "align_document_by_bbox",
+            "pad_type": "kWH",
+            "pad_percentage": 40.0,
+            "detection_to_use": "kPhoto"
+        },
+        {
+            "type": "lead_to_orientation",
+            "target_orientation": "k0"
+        },
+        {
+            "type": "resize",
+            "target_width": 256,
+            "target_height": 256,
+            "interpolation_mode": "INTER_LINEAR"
+        },
+        {
+            "type": "convert_to_float"
+        }
+    ],
+    "nnet_input_shape": [1, 256, 256, 3]
+}

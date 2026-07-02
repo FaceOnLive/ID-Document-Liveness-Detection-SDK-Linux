@@ -1,0 +1,17 @@
+{
+  "model_name": "tx_149.onnx",
+  "nnet_input_name": "x:0",
+  "nnet_output_name": "Identity:0",
+  "preprocessors": [
+    {
+      "type": "resize",
+      "target_width": 416,
+      "target_height": 416,
+      "interpolation_mode": "INTER_NEAREST",
+      "target_orientation": "kV"
+    },
+    {
+      "type": "convert_to_float"
+    }
+  ]
+}

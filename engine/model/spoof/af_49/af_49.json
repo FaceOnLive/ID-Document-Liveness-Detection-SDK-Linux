@@ -1,0 +1,35 @@
+{
+    "model_name": "af_49.onnx",
+    "nnet_input_name": "input",
+    "nnet_output_name": "output",
+    "preprocessors": [
+        {
+            "type": "align_document_by_bbox",
+            "pad_type": "kWH",
+            "detection_to_use": "kGenericDocument",
+            "pad_percentage": 30
+        },
+        {
+            "type": "resize",
+            "target_width": 518,
+            "target_height": 518,
+            "interpolation_mode": "INTER_LINEAR"
+        },
+        {
+            "type": "normalize",
+            "mean": [
+                123.675,
+                116.28,
+                103.53
+            ],
+            "std": [
+                58.395,
+                57.12,
+                57.375
+            ]
+        }
+    ],
+    "cache": {
+        "7.5": "af_49.7-5"
+    }
+}

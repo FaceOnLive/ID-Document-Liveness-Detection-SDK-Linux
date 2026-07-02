@@ -1,0 +1,29 @@
+{
+    "model_name": "rn_20.onnx",
+    "nnet_input_name": "input",
+    "nnet_output_name": "output",
+    "preprocessors": [
+        {
+            "type": "align_document_by_bbox",
+            "pad_type": "kWH",
+            "pad_percentage": 60.0,
+            "detection_to_use": "kPhoto"
+        },
+        {
+            "type": "lead_to_orientation",
+            "target_orientation": "k0"
+        },
+        {
+            "type": "resize",
+            "target_width": 280,
+            "target_height": 280,
+            "interpolation_mode": "INTER_LINEAR"
+        },
+        {
+            "type": "convert_to_float"
+        }
+    ],
+    "cache": {
+        "7.5": "rn_20.7-5"
+    }
+}

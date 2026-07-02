@@ -1,0 +1,36 @@
+{
+  "model_name": "rn_4.onnx",
+  "nnet_input_name": "x:0",
+  "nnet_output_name": "Identity:0",
+  "preprocessors": [
+    {
+      "type": "align_document_by_bbox",
+      "pad_type": "kWH",
+      "pad_percentage": 30,
+      "detection_to_use": "kPhoto"
+    },
+    {
+      "type": "lead_to_orientation",
+      "target_orientation": "k0"
+    },
+    {
+      "type": "resize",
+      "target_width": 370,
+      "target_height": 370,
+      "interpolation_mode": "INTER_LINEAR"
+    },
+    {
+      "type": "normalize",
+      "mean": [
+        0,
+        0,
+        0
+      ],
+      "std": [
+        255,
+        255,
+        255
+      ]
+    }
+  ]
+}

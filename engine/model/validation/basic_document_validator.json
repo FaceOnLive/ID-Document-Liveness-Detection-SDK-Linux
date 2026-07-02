@@ -1,0 +1,5 @@
+{
+  "type": "basic_document_validator",
+  "max_number_of_documents": 1,
+  "min_document_padding_px": 2
+}

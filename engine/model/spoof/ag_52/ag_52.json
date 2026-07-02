@@ -1,0 +1,30 @@
+{
+  "model_name": "ag_52.onnx",
+  "nnet_input_name": "x:0",
+  "nnet_output_name": "Identity:0",
+  "preprocessors": [
+    {
+      "type": "resize",
+      "target_height": 356,
+      "target_width": 356,
+      "interpolation_mode": "INTER_LINEAR"
+    },
+    {
+      "type": "lead_to_orientation",
+      "target_orientation": "k0"
+    },
+    {
+      "type": "normalize",
+      "mean": [
+        123.675,
+        116.28,
+        103.53
+      ],
+      "std": [
+        58.395,
+        57.12,
+        57.375
+      ]
+    }
+  ]
+}

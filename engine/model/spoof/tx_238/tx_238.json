@@ -1,0 +1,36 @@
+{
+  "model_name": "tx_238.onnx",
+  "nnet_input_name": "x:0",
+  "nnet_output_name": "Identity:0",
+  "preprocessors": [
+    {
+      "type": "stack_detections_by_bbox",
+      "target_width": 128,
+      "target_height": 128,
+      "interpolation_mode": "INTER_NEAREST",
+      "detections_to_align_by_bbox": [
+        {
+          "pad_type": "kWH",
+          "pad_percentage": 50,
+          "detection_to_use": "kGhostPhoto"
+        },
+        {
+          "pad_type": "kWH",
+          "pad_percentage": 0,
+          "detection_to_use": "kPhoto"
+        }
+      ],
+      "apply_bw_transform": true,
+      "detections_required": false
+    },
+    {
+      "type": "convert_to_float"
+    }
+  ],
+  "nnet_input_shape": [
+    1,
+    128,
+    128,
+    2
+  ]
+}

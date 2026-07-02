@@ -1,0 +1,25 @@
+{
+    "model_name": "ec_99.onnx",
+    "nnet_input_name": "input_1",
+    "nnet_output_name": "classification",
+    "preprocessors": [
+        {
+            "type": "align_document_by_bbox",
+            "pad_type": "kWH",
+            "pad_percentage": 16,
+            "detection_to_use": "kGenericDocument"
+        },
+        {
+            "type": "resize",
+            "target_width": 450,
+            "target_height": 450,
+            "interpolation_mode": "INTER_LINEAR"
+        },
+        {
+            "type": "convert_to_float"
+        }
+    ],
+    "cache": {
+        "7.5": "ec_99.7-5"
+    }
+}

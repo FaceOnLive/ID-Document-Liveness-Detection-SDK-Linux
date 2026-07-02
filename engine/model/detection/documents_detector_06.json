@@ -1,0 +1,80 @@
+{
+  "type": "multibox_detector_v2",
+  "common_ssd_preprocessors": [
+    {
+      "type": "resize",
+      "target_width": 640,
+      "target_height": 640,
+      "interpolation_mode": "INTER_LINEAR"
+    },
+    {
+      "type": "normalize",
+      "mean": [127.5, 127.5, 127.5],
+      "std": [127.5, 127.5, 127.5]
+    }
+  ],
+  "document_detector": {
+    "model_name": "documents_detector_04.onnx",
+    "score_threshold": 0.3,
+    "nnet_input_name": "input:0",
+    "nnet_boxes_output_name": "Identity_2:0",
+    "nnet_scores_output_name": "Identity_1:0",
+    "ssd_detection_class_ids": {
+      "document": 0,
+      "photo": 1
+    },
+    "postprocessor": {
+      "path_to_anchors_data": "anchors.bin",
+      "max_detections": 10,
+      "num_classes": 2,
+      "max_classes_per_detection": 1,
+      "non_max_suppression_score_threshold": 1e-08,
+      "intersection_over_union_threshold": 0.6,
+      "h_scale": 5,
+      "w_scale": 5,
+      "x_scale": 10,
+      "y_scale": 10
+    }
+  },
+  "ghost_detector": {
+    "model_name": "ghost_detector_02.onnx",
+    "score_threshold": 0.1,
+    "nnet_input_name": "input",
+    "nnet_boxes_output_name": "Identity_2:0",
+    "nnet_scores_output_name": "Identity_1:0",
+    "ssd_detection_class_ids": {
+      "ghost_photo": 0
+    },
+    "postprocessor": {
+      "path_to_anchors_data": "anchors.bin",
+      "max_detections": 10,
+      "num_classes": 1,
+      "max_classes_per_detection": 1,
+      "non_max_suppression_score_threshold": 0.2,
+      "intersection_over_union_threshold": 0.6,
+      "h_scale": 5,
+      "w_scale": 5,
+      "x_scale": 10,
+      "y_scale": 10
+    },
+    "timing_cache_config": "../cache/timing_cache.json"
+  },
+  "orientation_detector": {
+    "model_name": "orientation_detector_03.onnx",
+    "nnet_input_name": "input_tensor:0",
+    "nnet_output_name": "Identity:0",
+    "preprocessors": [
+      {
+        "type": "resize",
+        "target_width": 224,
+        "target_height": 224,
+        "interpolation_mode": "INTER_LINEAR"
+      },
+      {
+        "type": "normalize",
+        "mean": [127.5, 127.5, 127.5],
+        "std": [127.5, 127.5, 127.5]
+      }
+    ]
+  }
+}
